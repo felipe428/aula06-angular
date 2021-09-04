@@ -1,0 +1,11 @@
+<h1>Services DEMO</h1>
+
+<a [routerLink]="['']">HOME</a> |
+<a [routerLink]="['tasks']">TASKS</a> |
+<a [routerLink]="['log']">LOG</a> |
+
+{{timer.getCount()}}s
+
+<button (click)="timer.start(1000)">Start</button>
+<button (click)="timer.stop()">Stop</button>
+<router-outlet></router-outlet>
