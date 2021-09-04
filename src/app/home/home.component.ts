@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoggerService } from '../logger.service';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
+  constructor(public logger: LoggerService) {
+    this.logger.add('HomeComponent constructed');
   }
 
+  ngOnInit() {
+    this.logger.add('HomeComponent init');
+  }
 }

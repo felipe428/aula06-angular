@@ -6,10 +6,12 @@ import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import { HomeComponent } from './home/home.component';
 import { TasksComponent } from './tasks/tasks.component';
+import { LogComponent } from './log/log.component';
 
 import { RouterModule } from '@angular/router';
 import { TimerService } from './timer.service';
 import { TasksService } from './tasks.service';
+import { LoggerService } from './logger.service';
 
 @NgModule({
   imports: [
@@ -17,11 +19,18 @@ import { TasksService } from './tasks.service';
     FormsModule,
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
-      { path: 'tasks', component: TasksComponent }
+      { path: 'tasks', component: TasksComponent },
+      { path: 'log', component: LogComponent }
     ])
   ],
-  declarations: [AppComponent, HelloComponent, HomeComponent, TasksComponent],
+  declarations: [
+    AppComponent,
+    HelloComponent,
+    HomeComponent,
+    TasksComponent,
+    LogComponent
+  ],
   bootstrap: [AppComponent],
-  providers: [TimerService, TasksService]
+  providers: [TimerService, TasksService, LoggerService]
 })
 export class AppModule {}
