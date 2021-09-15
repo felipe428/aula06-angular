@@ -20,6 +20,6 @@ export class TasksService {
     this.list.push({ title });
   }
   remove(index: number) {
-    this.list.slice(index, 1);
+    this.list.splice(index, 1);
   }
 }
